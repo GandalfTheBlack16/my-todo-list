@@ -1,0 +1,75 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-card {
+  margin-bottom: 20px;
+}
+
+.demo-card {
+  margin-bottom: 20px;
+}
+
+.demo-section {
+  margin: 16px 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.demo-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+mat-card {
+  margin: 16px;
+  border-radius: 8px;
+}
+
+mat-card-header {
+  margin-bottom: 16px;
+}
+
+mat-list-item {
+  margin-bottom: 8px;
+}
+
+h3 {
+  color: #1976d2;
+  margin: 0 0 16px 0;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  mat-card {
+    margin: 8px;
+  }
+  
+  .demo-buttons {
+    flex-direction: column;
+    
+    button {
+      width: 100%;
+    }
+  }
+}
