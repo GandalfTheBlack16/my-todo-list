@@ -4,6 +4,20 @@ module.exports = {
   
   testMatch: ['**/+(*.)+(spec).+(ts)'],
   
+  // Transformaciones
+  transform: {
+    '^.+\\.(ts|js|mjs|html|svg)$': [
+      'jest-preset-angular',
+      {
+        tsconfig: 'tsconfig.spec.json',
+        stringifyContentPathRegex: '\\.(html|svg)$',
+      },
+    ],
+  },
+  
+  // Archivos de módulo
+  moduleFileExtensions: ['ts', 'html', 'js', 'json', 'mjs'],
+  
   collectCoverageFrom: [
     'src/app/**/*.ts',
     '!src/app/**/*.spec.ts',
