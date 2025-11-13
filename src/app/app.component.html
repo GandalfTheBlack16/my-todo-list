@@ -8,37 +8,7 @@
 </mat-toolbar>
 
 <div class="container">
-  <mat-card class="welcome-card">
-    <mat-card-header>
-      <mat-card-title>¡Bienvenido a tu Lista de Tareas!</mat-card-title>
-      <mat-card-subtitle>Organiza tus actividades de manera eficiente</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Esta aplicación está configurada con:</p>
-      <mat-list>
-        <mat-list-item>
-          <mat-icon matListItemIcon>check</mat-icon>
-          <div matListItemTitle>Angular 14</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>check</mat-icon>
-          <div matListItemTitle>Angular Material 14</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>check</mat-icon>
-          <div matListItemTitle>Jest para Testing</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>check</mat-icon>
-          <div matListItemTitle>GitHub Actions CI/CD</div>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button color="primary">EMPEZAR</button>
-      <button mat-raised-button color="accent">CREAR TAREA</button>
-    </mat-card-actions>
-  </mat-card>
+  <app-task-list></app-task-list>
 
   <mat-card class="demo-card">
     <mat-card-header>

@@ -21,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { CustomCardComponent } from './custom-card/custom-card.component';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -45,13 +46,16 @@ const MaterialComponents = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CustomCardComponent
+  ],
   imports: [
     CommonModule,
     ...MaterialComponents
   ],
   exports: [
-    ...MaterialComponents
+    ...MaterialComponents,
+    CustomCardComponent
   ]
 })
-export class MaterialModule { }
+export class SharedModule { }

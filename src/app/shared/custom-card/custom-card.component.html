@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-card-title *ngIf="title">
+        <span (click)="changeTitle()">{{ title }}</span>
+    </mat-card-title>
+    <mat-card-content>
+        <ng-content></ng-content>
+    </mat-card-content>
+</mat-card>
+    

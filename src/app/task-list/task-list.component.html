@@ -1,0 +1,15 @@
+<div class="list-container">
+    <app-custom-card [title]="cardTitle" [editableTitle]="true"> 
+        <div class="list-items" *ngIf="taskList.length > 0">
+            <ul>
+                <ng-container *ngFor="let task of taskList">
+                    <li class="list-item" [id]="'item-' + task.id">
+                        <mat-checkbox [checked]="task.checked" (change)="checkTask(task.id)">
+                            <span [ngClass]="task.checked ? 'checked' : ''">{{ task.title }}</span>
+                        </mat-checkbox>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </app-custom-card>
+</div>

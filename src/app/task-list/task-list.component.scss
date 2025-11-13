@@ -1,0 +1,13 @@
+.list-items {
+    ul {
+        list-style: none;
+    }
+}
+
+.list-item {
+    mat-checkbox {
+        span.checked {
+            text-decoration: line-through;
+        }
+    }
+}
