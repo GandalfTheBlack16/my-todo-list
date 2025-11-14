@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CustomCardComponent } from './custom-card/custom-card.component';
+import { EditableTextComponent } from './editable-text/editable-text.component';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -47,7 +48,8 @@ const MaterialComponents = [
 
 @NgModule({
   declarations: [
-    CustomCardComponent
+    CustomCardComponent,
+    EditableTextComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ const MaterialComponents = [
   ],
   exports: [
     ...MaterialComponents,
-    CustomCardComponent
+    CustomCardComponent,
+    EditableTextComponent
   ]
 })
 export class SharedModule { }

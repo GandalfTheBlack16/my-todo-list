@@ -1,0 +1,21 @@
+<div class="container">
+    <ng-container *ngIf="!isEditting">
+        <div class="view-container">
+            <span class="plain-text" (click)="editMode()">{{ text }}</span>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="isEditting">
+        <div class="edition-container">
+            <input
+                #editInput
+                [value]="text"
+                type="text"
+                (change)="onValueChange($event)"
+                (keydown.enter)="onEnterKey($event)"
+            />
+            <button mat-icon-button (click)="viewMode()">
+                <mat-icon fontIcon="check"></mat-icon>
+            </button>
+        </div>
+    </ng-container>
+</div>

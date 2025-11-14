@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-custom-card',
@@ -8,17 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CustomCardComponent implements OnInit {
 
   @Input() title = '';
-  @Input() editableTitle = false
+  @Input() emtyTitleText = 'No Title';
+  @Output() titleChange = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  changeTitle() {
-    if (this.editableTitle) {
-      
-    }
+  onChangeTitle(newTitle: string) {
+    this.title = newTitle;
+    this.titleChange.emit(this.title);
   }
 
 }

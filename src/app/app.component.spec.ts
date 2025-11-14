@@ -36,11 +36,4 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('mat-toolbar span')?.textContent).toContain('my-todo-list');
   });
-
-  it('should render welcome card', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('mat-card-title')?.textContent).toContain('¡Bienvenido a tu Lista de Tareas!');
-  });
 });

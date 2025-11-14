@@ -9,42 +9,6 @@
 
 <div class="container">
   <app-task-list></app-task-list>
-
-  <mat-card class="demo-card">
-    <mat-card-header>
-      <mat-card-title>Ejemplo de Componentes Material</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="demo-section">
-        <h3>Formulario de Tarea</h3>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Nueva tarea</mat-label>
-          <input matInput placeholder="Escribe tu tarea aquí...">
-          <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
-        
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Categoría</mat-label>
-          <mat-select>
-            <mat-option value="personal">Personal</mat-option>
-            <mat-option value="trabajo">Trabajo</mat-option>
-            <mat-option value="hogar">Hogar</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <div class="demo-buttons">
-          <button mat-raised-button color="primary">
-            <mat-icon>add</mat-icon>
-            Añadir Tarea
-          </button>
-          <button mat-stroked-button color="warn">
-            <mat-icon>clear</mat-icon>
-            Limpiar
-          </button>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
 </div>
 
 <router-outlet></router-outlet>

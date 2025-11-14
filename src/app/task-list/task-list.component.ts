@@ -8,7 +8,7 @@ import { Task } from '../model/task.model';
 })
 export class TaskListComponent implements OnInit {
 
-  cardTitle = 'To Dos'
+  title = 'My first todo list';
   taskList: Task[] = [
     { id: 1, title: "Esto es una tarea de prueba 1", checked: false },
     { id: 2, title: "Esto es una tarea de prueba 2", checked: true }
@@ -17,6 +17,10 @@ export class TaskListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onChangeTitle(newTitle: string) {
+    this.title = newTitle;
   }
 
   checkTask(taskId: number) {
