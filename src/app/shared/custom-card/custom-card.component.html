@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title *ngIf="title">
-        <app-editable-text [text]="title" (textChange)="onChangeTitle(title)" [emptyText]="emtyTitleText"></app-editable-text>
+        <app-editable-text [text]="title" (textChange)="onChangeTitle($event)" [emptyText]="emtyTitleText"></app-editable-text>
     </mat-card-title>
     <mat-card-content>
         <ng-content></ng-content>

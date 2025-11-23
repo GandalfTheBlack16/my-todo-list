@@ -22,11 +22,13 @@ export class EditableTextComponent implements OnInit {
 
   onValueChange($event: Event) {
     this.text = ($event.target as HTMLInputElement).value;
+    this.textChange.emit(this.text);
   }
 
   onEnterKey($event: Event) {
     this.text = ($event.target as HTMLInputElement).value;
     this.viewMode();
+    this.textChange.emit(this.text);
   }
 
   viewMode() {

@@ -1,0 +1,17 @@
+<div class="list-container">
+    <ng-container *ngFor="let list of taskLists">
+        <app-custom-card [title]="list.title" (titleChange)="onChangeTitle(list.id, $event)" emtyTitleText="Unnamed List"> 
+            <div class="list-items" *ngIf="list.tasks.length > 0">
+                <ul>
+                    <ng-container *ngFor="let task of list.tasks">
+                        <li class="list-item" [id]="'item-' + task.id">
+                            <mat-checkbox [id]="task.id.toString()" [checked]="task.checked" (change)="checkTask($event)">
+                                <span [ngClass]="task.checked ? 'checked' : ''">{{ task.title }}</span>
+                            </mat-checkbox>
+                        </li>
+                    </ng-container>
+                </ul>
+            </div>
+        </app-custom-card>
+    </ng-container>
+</div>
