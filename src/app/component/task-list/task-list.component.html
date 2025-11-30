@@ -1,17 +1,40 @@
 <div class="list-container">
     <ng-container *ngFor="let list of taskLists">
-        <app-custom-card [title]="list.title" (titleChange)="onChangeTitle(list.id, $event)" emtyTitleText="Unnamed List"> 
-            <div class="list-items" *ngIf="list.tasks.length > 0">
-                <ul>
-                    <ng-container *ngFor="let task of list.tasks">
-                        <li class="list-item" [id]="'item-' + task.id">
-                            <mat-checkbox [id]="task.id.toString()" [checked]="task.checked" (change)="checkTask($event)">
-                                <span [ngClass]="task.checked ? 'checked' : ''">{{ task.title }}</span>
-                            </mat-checkbox>
-                        </li>
-                    </ng-container>
-                </ul>
-            </div>
+        <app-custom-card> 
+            <card-title>
+                <app-editable-text [text]="list.title" (textChange)="onChangeTitle(list.id, $event)" emptyText="Unnamed List"></app-editable-text>
+            </card-title>
+            <card-body>
+                <div class="list-items" *ngIf="list.tasks.length > 0">
+                    <ul>
+                        <ng-container *ngFor="let task of list.tasks">
+                            <li class="list-item" [id]="'item-' + task.id">
+                                <mat-checkbox [id]="task.id.toString()" [checked]="task.checked" (change)="checkTask($event)">
+                                    <app-editable-text
+                                        [text]="task.title"
+                                        [textStyle]="task.checked ? checkedStyle : {}"
+                                        (textChange)="changeTaskTitle(list.id, task.id, $event)"
+                                        emptyText="Unnamed Task"
+                                        [editAction]="buttonEditAction"
+                                    ></app-editable-text>
+                                </mat-checkbox>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </card-body>
+            <card-actions>
+                <div>
+                    <button mat-icon-button color="primary" aria-label="Add Task" (click)="addTask(list.id)">
+                        <mat-icon>add</mat-icon>
+                        <span class="button-text">Add Task</span>
+                    </button>
+                    <button mat-icon-button color="warn" aria-label="Delete List">
+                        <mat-icon>delete</mat-icon>
+                        <span class="button-text">Delete List</span>
+                    </button>
+                </div>
+            </card-actions>
         </app-custom-card>
     </ng-container>
 </div>

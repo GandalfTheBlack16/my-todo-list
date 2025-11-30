@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { EditAction, TextStyleType } from './editable-text.model';
 
 @Component({
   selector: 'app-editable-text',
@@ -9,6 +10,8 @@ export class EditableTextComponent implements OnInit {
 
   @Input() text = '';
   @Input() emptyText = 'Undefined';
+  @Input() editAction: EditAction = EditAction.CLICK;
+  @Input() textStyle: TextStyleType = {};
   @Output() textChange = new EventEmitter<string>();
 
   @ViewChild('editInput', { static: false }) editInput!: ElementRef<HTMLInputElement>;

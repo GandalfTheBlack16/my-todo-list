@@ -1,7 +1,15 @@
 <div class="container">
     <ng-container *ngIf="!isEditting">
         <div class="view-container">
-            <span class="plain-text" (click)="editMode()">{{ text }}</span>
+            <ng-container *ngIf="editAction === 'click'">
+                <span class="plain-text" [ngStyle]="textStyle" (click)="editMode()">{{ text }}</span>
+            </ng-container>
+            <ng-container *ngIf="editAction === 'button'">
+                <span class="plain-text" [ngStyle]="textStyle">{{ text }}</span>
+                <button mat-icon-button (click)="editMode()">
+                    <mat-icon fontIcon="edit" class="edit-icon" matTooltip="Edit task"></mat-icon>
+                </button>
+            </ng-container>
         </div>
     </ng-container>
     <ng-container *ngIf="isEditting">

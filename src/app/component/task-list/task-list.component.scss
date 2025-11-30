@@ -4,10 +4,12 @@
     }
 }
 
-.list-item {
-    mat-checkbox {
-        span.checked {
-            text-decoration: line-through;
-        }
+card-actions {
+    div {
+        display: flex;
+        gap: 4em;
+        margin-top: 16px;
+        justify-content: flex-start;
+        padding-left: 1em;
     }
 }

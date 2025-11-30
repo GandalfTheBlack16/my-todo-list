@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -36,13 +36,14 @@ function initializeAppFactory(httpClient: HttpClient): () => Observable<AppConfi
   ],
   providers: [
     {
-      provide: 'APP_INITIALIZER',
+      provide: APP_INITIALIZER,
       useFactory: initializeAppFactory,
       deps: [HttpClient],
       multi: true
     },
     { provide: APP_CONFIG, useValue: ENVCONFIG }
 ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

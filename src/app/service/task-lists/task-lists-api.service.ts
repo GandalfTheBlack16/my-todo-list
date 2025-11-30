@@ -12,9 +12,7 @@ export class TaskListsApiService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    // this.baseUrl = inject(APP_CONFIG).apiBaseUrl;
-    // console.log('API Base URL:', this.baseUrl);
-    this.baseUrl = '/api/v1';
+    this.baseUrl = inject(APP_CONFIG).apiBaseUrl;
   }
 
   getTaskLists(): Observable<TaskListApi[]> {

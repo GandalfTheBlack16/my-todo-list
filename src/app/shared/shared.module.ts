@@ -23,6 +23,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CustomCardComponent } from './custom-card/custom-card.component';
 import { EditableTextComponent } from './editable-text/editable-text.component';
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -53,8 +54,9 @@ const MaterialComponents = [
   ],
   imports: [
     CommonModule,
-    ...MaterialComponents
-  ],
+    ...MaterialComponents,
+    MatTooltipModule
+],
   exports: [
     ...MaterialComponents,
     CustomCardComponent,
